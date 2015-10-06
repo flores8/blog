@@ -11,6 +11,7 @@ gem 'jbuilder', '~> 2.0'
 gem 'sdoc', '~> 0.4.0', group: :doc
 gem 'faker'
 gem 'redcarpet'
+gem 'will_paginate', '~> 3.0.7'
 
 group :development, :test do
   gem 'byebug'
