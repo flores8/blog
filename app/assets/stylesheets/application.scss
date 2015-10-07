@@ -1,18 +1,149 @@
 /*
- * This is a manifest file that'll be compiled into application.css, which will include all the files
- * listed below.
- *
- * Any CSS and SCSS file within this directory, lib/assets/stylesheets, vendor/assets/stylesheets,
- * or any plugin's vendor/assets/stylesheets directory can be referenced here using a relative path.
- *
- * You're free to add application-wide styles to this file and they'll appear at the bottom of the
- * compiled file so the styles you add here take precedence over styles defined in any styles
- * defined in the other CSS/SCSS files in this directory. It is generally better to create a new
- * file per style scope.
- *
  *= require_tree .
  *= require_self
  */
 
+@import url(http://fonts.googleapis.com/css?family=Lato:400,700);
+
+$teal:								#558C89;
+$lightTeal:							#74AFAD;
+$orange:							#D9853B;
+$offWhite:							#ECECEA;
+$white:								#ffffff;
+$text: 								#585457;
+$body-bg:                          $offWhite;
+$font-family-sans-serif:           'Lato', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+$navbar-height:                    45px;
+$navbar-default-bg:                $white;
+$navbar-default-brand-color:       $teal;
+$brand-primary:                    $teal;
+$jumbotron-bg:                     $white;
+
+
+/* Mixins */
+@mixin transition ($seconds) {
+	-webkit-transition: $seconds;
+	-moz-transition: $seconds;
+	-o-transition: $seconds;
+	transition: $seconds;
+}
+@mixin border-radius ($px) {
+	-webkit-border-radius: $px;
+	-moz-border-radius: $px;
+	border-radius: $px;
+}
+
 @import "bootstrap-sprockets";
 @import "bootstrap";
+
+a {
+	color: $orange;
+	@include transition(.4s);
+	&:hover {
+		color: darken($orange, 10%);
+		text-decoration: none;
+	}
+}
+
+#blog-index {
+	div.individual-post {
+		background-color: $white;
+		margin-bottom: 2rem;
+		@include border-radius (2px);
+		padding: 0 3rem 1.5rem 3rem;
+	}
+	a.text {
+		color: $text;
+		&:hover {
+			color: $text;
+		}
+	}
+	h2 {
+		font-size: 2.25rem;
+		margin-bottom: .75rem;
+	}
+}
+
+#blog-show {
+	div.individual-post {
+		background-color: $white;
+		@include border-radius (2px);
+		padding: 0 3rem 2rem 3rem;
+	}
+	h1 {
+		p {
+			font-size: 3rem;
+			color: $teal;
+			border-bottom: 1px solid $offWhite;
+			padding-bottom: .75rem;
+			padding-left: 1rem;
+			margin-bottom: 2.5rem;
+		}
+	}
+	p {
+		padding-left: 1.25rem;
+		font-size: 1.9rem;
+		line-height: 2.9rem;
+		margin-bottom: 2rem;
+	}
+}
+
+/*
+Palette:
+#558C89
+#74AFAD
+#D9853B
+#ECECEA*/
+/*
+#blog-index {
+	h2 {
+		font-size: 2.25rem;
+		margin-bottom: .75rem;
+	}
+	p {
+		a.purple {
+			color: #AF9DAC;
+			&:hover {
+				background-color: #AF9DAC;
+			}
+		}
+		a.blue {
+			color: #337ab7;
+			&:hover {
+				background-color: #337ab7;
+			}
+		}
+		a.purple, a.blue {
+			-webkit-transition: .4s;
+			-moz-transition: .4s;
+			-o-transition: .4s;
+			transition: .4s;
+			&:hover {
+				color: white;
+				text-decoration: none;
+			}
+		}
+	}
+	div.pagination {
+		font-size: 1.75rem;
+		a, span.disabled {
+			padding: .75rem;
+		}
+		a {
+			color: #AF9DAC;
+			&:hover {
+				text-decoration: none;
+				background-color: #AF9DAC;
+				color: white;
+			}
+		}
+		em.current {
+			color: white;
+			background-color: #AF9DAC;
+			padding: .75rem;
+		}
+		span.disabled {
+			color: #aeaeae;
+		}
+	}
+}*/

@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
-  resources :posts
+  resources :posts, path: "blog"
   root 'welcome#home'
 
   get '/about' => 'welcome#about'

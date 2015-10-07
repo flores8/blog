@@ -1,14 +1,14 @@
 <p id="notice"><%= notice %></p>
 
-<p>
-  <strong>Title:</strong>
-  <%= @post.title %>
-</p>
+<div id="blog-show">
+	<div class="row">
+		<div class="col-md-8 col-md-offset-2 individual-post">
+			<h1><%= markdown @post.title %></h1>
+			<p><%= markdown @post.body %></p>
+			<p><%= link_to 'Edit', edit_post_path(@post) %> |
+<%= link_to 'Back', posts_path %></p>
+		</div>
+	</div>
+</div>
 
-<p>
-  <strong>Body:</strong>
-  <%= @post.body %>
-</p>
 
-<%= link_to 'Edit', edit_post_path(@post) %> |
-<%= link_to 'Back', posts_path %>
