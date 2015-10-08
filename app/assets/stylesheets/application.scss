@@ -86,6 +86,23 @@ a {
 		line-height: 2.9rem;
 		margin-bottom: 2rem;
 	}
+	.comment {
+		border-top: 1px solid $offWhite;
+		padding: 1rem;
+		h4 {
+			color: $lightTeal;
+			margin-top: 2rem;
+			margin-bottom: 1rem;
+		}
+		p {
+			padding-bottom: 2.5rem;
+			padding-top: .5rem;
+			border-bottom: 1px solid $offWhite;
+			font-size: 1.5rem;
+			line-height: 2rem;
+			@include border-radius(2px);
+		}
+	}
 }
 
 /*

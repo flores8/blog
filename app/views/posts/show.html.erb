@@ -9,6 +9,19 @@
 <%= link_to 'Back', posts_path %></p>
 		</div>
 	</div>
+
+	<!-- Comments -->
+	<div class="row">
+		<div class="col-md-8 col-md-offset-2 individual-post">
+			<div class="comment">
+				<h4><%= pluralize(@post.comments.count, 'Comment') %>:</h4>
+				<% @post.comments.each do |comment| %>
+					<p><%= comment.body %></p>
+				<% end %>
+			</div>
+			<%= render partial: 'comments/form', locals: { post: @post, comment: @comment } %>
+		</div>
+	</div>
 </div>
 
 

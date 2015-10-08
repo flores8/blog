@@ -1,5 +1,7 @@
 Rails.application.routes.draw do
-  resources :posts, path: "blog"
+  resources :posts, path: "blog" do
+    resources :comments, only: [:create]
+  end
   root 'welcome#home'
 
   get '/about' => 'welcome#about'
